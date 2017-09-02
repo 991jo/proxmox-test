@@ -1,0 +1,9 @@
+---
+- hosts: hosts
+  remote_user: root
+  tasks:
+    - name: debug message task
+      debug:
+        msg: "debug message at tasks in playbook from {{ansible_hostname}} {{ansible_default_ipv4['address']}}"
+  roles:
+    - proxmox-install
